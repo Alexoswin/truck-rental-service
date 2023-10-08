@@ -10,7 +10,7 @@
   position: relative;
   left: 47vw;
   background-color: rgb(43, 98, 219);
-  bottom: 43vh;
+  bottom: 48vh;
   width:auto;
   color: white;
   font-size: 1rem;
@@ -46,7 +46,7 @@
 body{
   text-align: center;
   text-decoration-line: none;
-  background-color: aliceblue;
+  background-color: rgb(229, 230, 231);
 
 }
 
@@ -78,6 +78,7 @@ body{
   padding-bottom: 1vh;
   display: flex;
   justify-content: center;
+  bottom: 5vh;
 }
 
 /* for icon */
@@ -90,56 +91,40 @@ body{
 #text{
   color: white;
 }
-#content{
-  width:81vw;
-  left: 16.5vw;
-  position: relative;  
-  
-  background-color: rgb(255, 255, 255);
-  display: inline-block;
-}
-
 
 .card {
-
+  
+  width: 30rem;
+  height: 35rem;
   cursor: pointer;
   font-size: 1.5rem;
-  border-width: 0.01vh;
-  border-color: rgb(0, 0, 0);
+  margin-left: 1vw;
+
   border-collapse: collapses;
   position: relative;
  overflow: hidden;
  color: rgb(0, 0, 0);
-  border-radius: 0px;
+  border-radius: 25px;
+  top: 1vh;
 }
 
-.col-md-4{
-  background-size: cover;
-  height:20rem;
-  display: inline-block;
- 
-}
-#content{
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-right: 0.5vw;
-  background-color: aliceblue;
 
-}
+
+
 .card-text{
   margin-top: 2rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
+  text-align: center;
+  width: 26rem;
 }
 #cardimage1{
 
   background-size:cover ; 
-  border-style: solid;
-  border-width: 0.1vh;
-  border-color: rgb(0, 0, 0);
+  
   border-collapse: collapse;
   margin: -0.1vh; 
+  height: 22rem;
 }
 
 
@@ -205,4 +190,14 @@ img{
 }
 #detailicon:hover{
   color:blue;
+}
+#forc{
+  display: inline-block;
+  margin-right: 5vw;
+  margin-top: 10vh;
+}
+#c_block{
+  background-color:aliceblue;
+  height: 55vh;
+  
 }

@@ -6,12 +6,12 @@ export default function Card(props) {
   
   return (
     <>
-    
+    <div id="forc">
     <div className="card mb-3"  >
 
             
             <div className="row g-0 ">
-              <div className="col-md-4" id="cardimage1" style={{ backgroundImage: `url(${props.url})` }}>
+              <div  id="cardimage1" style={{ backgroundImage: `url(${props.url})` }}>
               
               </div><br/>
               <div className="col-md-8">
@@ -27,7 +27,7 @@ export default function Card(props) {
               </div>
             </div>
     <div/> 
-        
+    </div>
     </>
   )
 }

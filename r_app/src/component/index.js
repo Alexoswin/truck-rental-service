@@ -88,33 +88,33 @@ import c7 from "./images/for_card/c6.jpeg"
 
       
                       
-      <div id="content"   >
+     
         <Link to="/Details/truck1">  
-          <Card url={c1}/>
+          <Card text="Cost per Kilometer: $0.45 Capacity: 10 tons Description: Truck 1 is an economical choice for transporting goods. It offers a competitive cost per kilometer and can handle up to 10 tons of cargo." url={c1}/>
         </Link>
         <Link to="/Details/truck2">
-          <Card url={c2}/>
+          <Card text="Cost per Kilometer: $0.50Capacity: 8 tonsDescription: Truck 2 provides a good balance between cost-efficiency and cargo capacity. With a cost per kilometer of $0.50, it can carry up to 8 tons of freight." url={c2}/>
         </Link>
         <Link to="/Details/truck3">
-          <Card url={c3}/>
+          <Card text="Cost per Kilometer: $0.55 Capacity: 12 tons Description: Truck 3 is a reliable choice for transporting heavy loads. While its cost per kilometer is slightly higher at $0.55, it boasts a generous capacity of 12 tons." url={c3}/>
         </Link>
         <Link to="/Details/truck4">
-          <Card url={c4}/>
+          <Card text="Cost per Kilometer: $0.60 Capacity: 6 tons Description: Truck 4 is a compact and cost-effective option for smaller cargo. It comes with a cost per kilometer of $0.60 and can carry up to 6 tons of goods." url={c4}/>
         </Link>
         <Link to="/Details/truck5">
-          <Card url={c5}/>
+          <Card  text="Cost per Kilometer: $0.65 Capacity: 15 tons Description: Truck 5 is a heavy-duty hauler with a cost per kilometer of $0.65. It excels in transporting large loads, accommodating up to 15 tons of freight"  url={c5}/>
         </Link>
-        <Link to="/Details/truck6">
-          <Card url={c6}/>
+        <Link  to="/Details/truck6">
+          <Card text="Cost per Kilometer: $0.65 Capacity: 15 tons Description: Truck 5 is a heavy-duty hauler with a cost per kilometer of $0.65. It excels in transporting large loads, accommodating up to 15 tons of freight"  url={c6}/>
         </Link>
         <Link to="/Details/truck7">
-          <Card url={c7}/>
+          <Card text="Cost per Kilometer: $0.65 Capacity: 15 tons Description: Truck 5 is a heavy-duty hauler with a cost per kilometer of $0.65. It excels in transporting large loads, accommodating up to 15 tons of freight"  url={c7}/>
         </Link>
       
         
 
         
-      </div>
+     
 </>
   );
 }
