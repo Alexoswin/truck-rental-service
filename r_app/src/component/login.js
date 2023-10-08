@@ -34,22 +34,22 @@ export default function Login(){
   }
   
 
-    const [sname,setSName]=useState('')
-  const [semail,setSEmail]=useState('')
-  const [spassword,setSPassword]=useState('')
+    const [sname,setSname]=useState('')
+  const [semail,setSemail]=useState('')
+  const [spassword,setSpassword]=useState('')
   
   
   async function submit2(e) {
     e.preventDefault();
     try {
       const res = await axios.post("http://localhost:8000/signup", {
-        name: sname,
-        email: semail,
-        password: spassword,
+         sname,
+         semail,
+         spassword,
       });
       if (res.data === "exists") {
         alert("Your account already exists");
-      } else if (res.data === "registered") {
+      } else if (res.data === "notexists") {
         alert("Account created successfully");
       }
     } catch (error) {
@@ -121,7 +121,7 @@ export default function Login(){
                   id="sname" 
                   type="text" 
                   placeholder="Enter your username"
-                  onChange={(e)=>{setSName(e.target.value)}}
+                  onChange={(e)=>{setSname(e.target.value)}}
                   
                   required />
                 </div>
@@ -133,7 +133,7 @@ export default function Login(){
                   id="semail"   
                   type="text" 
                   placeholder="Enter your email"
-                  onChange={(e)=>{setSEmail(e.target.value)}}
+                  onChange={(e)=>{setSemail(e.target.value)}}
                 
                   required />
                 </div>
@@ -146,7 +146,7 @@ export default function Login(){
                   id="spassword" 
                   type="password" 
                   placeholder="Enter your password" 
-                  onChange={(e)=>{setSPassword(e.target.value)}}
+                  onChange={(e)=>{setSpassword(e.target.value)}}
                  
                  
                   required />

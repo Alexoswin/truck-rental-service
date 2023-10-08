@@ -8,9 +8,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
 
-app.get("/", (req, res) => {
+app.get("/",cors(), (req, res) => {
   // Define your root route logic here
-  res.status(200).json("Welcome to the server!");
+  res.json("Welcome to the server!");
 });
 
 app.post("/login", async (req, res) => {
@@ -19,14 +19,14 @@ app.post("/login", async (req, res) => {
     const check = await collection.findOne({ email: email ,password:password });
 
     if (check) {
-      res.status(200).json("exists");
+      res.json("exists");
     } else {
-      res.status(404).json("notexists");
+      res.json("notexists");
 
     }
   } catch (e) {
-    console.error(e);
-    res.status(500).json("servererror");
+   
+    res.json("servererror");
   }
 });
 
@@ -42,14 +42,16 @@ app.post("/signup", async (req, res) => {
     const check = await collection.findOne({ email:semail  });
 
     if (check) {
-      res.status(200).json("exists");
+      res.json("exists");
+     
     } else {
+      res.json("notexists");
       await collection.insertMany([data]);
-      res.status(201).json("registered");
+    
     }
   } catch (e) {
-    console.error(e);
-    res.status(500).json("servererror");
+    
+    res.json("server error");
   }
 });
 
