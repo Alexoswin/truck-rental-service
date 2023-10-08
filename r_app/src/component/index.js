@@ -2,12 +2,12 @@
 import Card from './card';
 import { Link } from 'react-router-dom';
 
-import React, { useState, useEffect } from 'react';
+
 import image1 from "./images/t1.jpeg"
 import image2 from "./images/t2.jpeg"
 import image3 from "./images/t3.jpeg"
 import image4 from "./images/t4.jpeg"
-import  Opencard from "./when_carf_is_open"
+
 
 // importing images for card 
 import c1 from "./images/for_card/c1.jpeg"
@@ -62,8 +62,10 @@ import c7 from "./images/for_card/c6.jpeg"
      
 
       </div>
-    </div>  
-                
+    </div> 
+    <Link to="/login">
+    <button className='btn btn-primarry' id="loginbtn">Login</button>
+    </Link>           
       <div id="under_image_text">
 
       <p id="text">
@@ -84,38 +86,7 @@ import c7 from "./images/for_card/c6.jpeg"
 
       </div>
 
-      <div id="beside_card">
-        <div id="btnn">
-        
-        <div className="btn-group">
-          <button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Category
-          </button>
-          <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="#">Menu item</a></li>
-            <li><a className="dropdown-item" href="#">Menu item</a></li>
-            <li><a className="dropdown-item" href="#">Menu item</a></li>
-          </ul>
-        </div>
-
-              <p  id="fortext">Sort by</p>
-            <button type="button" className="btn btn-primary ">
-              Cheapest
-            </button>
-            <button type="button" className="btn btn-primary  ">
-              Expensive
-            </button>
-            <button type="button" className="btn btn-primary">
-              Smallest
-            </button>
-            <button type="button" className="btn btn-primary">
-              Largest
-            </button>
-            <button  type="button" className="btn btn-primary">
-              most brought
-            </button>
-        </div>    
-      </div>
+      
                       
       <div id="content"   >
         <Link to="/Details/truck1">  

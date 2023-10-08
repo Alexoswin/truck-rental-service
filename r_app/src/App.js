@@ -1,4 +1,5 @@
 import './App.css';
+
 import Navbar from './component/navbar.js'
 import { 
   BrowserRouter as Router, 
@@ -19,6 +20,7 @@ import i4 from "./component/images/for_card/c3.jpeg"
 import i5 from "./component/images/for_card/c4.jpeg"
 import i6 from "./component/images/for_card/c5.jpeg"
 import i7 from "./component/images/for_card/c6.jpeg"
+import Login from './component/login';
 
 
 
@@ -28,11 +30,7 @@ function App() {
 
 
   // dark mode 
-  function Dark(){
-   document.body.style.backgroundcolor ="black"
-
-
-  }
+ 
 
   return (
     <>
@@ -51,7 +49,8 @@ function App() {
           <Route path ="/Details/truck4" element={<Opencard image={i4} />} />
           <Route path ="/Details/truck5" element={<Opencard image={i5} />} />
           <Route path ="/Details/truck6" element={<Opencard image={i6} />} />
-          <Route path ="/Details/truck7" element={<Opencard image={i7} />} /> 
+          <Route path ="/Details/truck7" element={<Opencard image={i7} />} />
+          <Route path ="/login" Component={Login} />  
 
         </Routes>
       </Router>

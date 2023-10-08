@@ -6,6 +6,18 @@
 #icon:hover{
   color:orange;
 }
+#loginbtn{
+  position: relative;
+  left: 47vw;
+  background-color: rgb(43, 98, 219);
+  bottom: 43vh;
+  width:auto;
+  color: white;
+  font-size: 1rem;
+}
+#loginbtn:hover{
+  background-color: rgb(16, 16, 246);
+}
 
 .nav{
   
@@ -82,7 +94,7 @@ body{
   width:81vw;
   left: 16.5vw;
   position: relative;  
-  bottom: 79vh; 
+  
   background-color: rgb(255, 255, 255);
   display: inline-block;
 }
@@ -130,28 +142,6 @@ body{
   margin: -0.1vh; 
 }
 
-#beside_card{
-  margin: -0.1vh; 
-  position: relative;
-  right:2vw;
-  top:1vh;
-  height: 80vh;
-  width :15.95vw;
-  color: rgb(0, 0, 0);
-  display:inline-block;
-  border-style: solid;
-  border-width: 0.1vh;
-  border-color: black;
-  background-image: url(component/images/background.jpeg);
-  background-size: cover;
-  margin-right: 80vw; 
-  display: flex;
-  padding-top: 2vh;
-  text-align: center;
-  flex-direction: column;
-  justify-content: space-around; 
-  display: inline-block;
-}
 
 #filler{
   font-size: 2rem;
@@ -164,15 +154,7 @@ body{
   font-weight: bold;
   font-size: 1.2rem;
 }
-.btn{
- width:14.8vw;
-  position: relative;
-  left: 0.05vw;
-  margin-top: 4vh;
-  bottom: 3vh;
-  font-size: 0.8rem;
-  
-}
+
 
 #fortext{
   margin-top: 4vh;
@@ -194,11 +176,7 @@ img{
  
 }
 
-#c_block{
-  background-image: url(component/images/background2.jpeg);
-  background-size: contain;
-  height: 54vh;
-}
+
 .active{
   color: orange
 }
@@ -221,7 +199,7 @@ img{
   height:4vh;
   width: 3.8vw;
   border-style: solid;
-  border-width: 0.4vh;
+  border-width: 0.1vh;
   border-radius: 10vh;
   color: black;
 }
