@@ -1,15 +1,21 @@
 import React from 'react'
-export default function Account() {
+export default function Account(props) {
   
   return (
   
        <>
-       <div>
-       <br/> <br/> <br/>   
-       <br/> <br/> <br/>   
+       
+       <div id="abox">
+       <div className='userimg'>
+        </div>
 
-         <h1>ACCOUNT</h1>
+        <div className="details">
+          
+         name:<div className='name'>{props.account_name}</div>
+         email:<div className='email'>{props.account_email}</div>
+         Address:<div className='address'></div>
+        </div>
+
        </div>
-        
        </>
   )}

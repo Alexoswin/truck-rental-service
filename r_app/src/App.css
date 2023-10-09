@@ -201,3 +201,30 @@ img{
   height: 55vh;
   
 }
+.details{
+  
+  font-size: 1.5rem;
+  padding-right: 35vh;
+  padding-top: 5vh;
+}
+#abox{
+  position: relative;
+  top:20vh;
+  background-color: white;
+  display: inline-block;
+  height: 70vh;
+  width: 50vh;
+  border-radius: 30px;
+
+}
+.userimg{
+  background-image: url(https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg);
+  background-size: cover;
+  height: 27vh;
+  width: 27vh;
+  margin-top: 2vh;
+  margin-left: 11.5svh;
+  border-radius: 50%;
+
+  
+}

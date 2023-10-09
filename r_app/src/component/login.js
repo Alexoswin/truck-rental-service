@@ -8,8 +8,9 @@ import React ,{useState} from "react";
 
 
 export default function Login(){
-   
-
+  let account_name = ""
+  let account_email= ""
+  const [name,setName]=useState('')
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
   
@@ -18,12 +19,17 @@ export default function Login(){
     e.preventDefault();
     try {
       const response = await axios.post("http://localhost:8000/login", {
-        email,
+      name,  
+      email,
         password
       });
 
       if (response.data === "exists") {
-          alert('you are loged in in your account')
+        
+            account_name = name
+             account_email= email
+            
+          alert(`welcome ${name}`)
       } else if (response.data === "notexists") {
         alert("Your account doesn't exist");
       }
@@ -49,6 +55,7 @@ export default function Login(){
       });
       if (res.data === "exists") {
         alert("Your account already exists");
+
       } else if (res.data === "notexists") {
         alert("Account created successfully");
       }
@@ -59,8 +66,7 @@ export default function Login(){
   }
 
   
-  
-  
+  //for account page details 
   
     
 
@@ -90,6 +96,12 @@ export default function Login(){
             <div className="title">Login</div>
             <form action="#">
               <div className="input-boxes">
+              <div className="input-box">
+                  <i className="fas fa-envelope"></i>
+                  <input
+                    onChange={(e)=>{setName(e.target.value)}}
+                  name="name" id="name" type="text" placeholder="Enter your username" required />
+                </div>
                 <div className="input-box">
                   <i className="fas fa-envelope"></i>
                   <input
