@@ -2,12 +2,13 @@
 import axios from "axios";
 import  "./login.css"
 import React ,{useState} from "react";
-
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 export default function Login(){
+  const navigate = useNavigate();
   let account_name = ""
   let account_email= ""
   const [name,setName]=useState('')
@@ -25,11 +26,15 @@ export default function Login(){
       });
 
       if (response.data === "exists") {
-        
+        alert(`welcome ${name}`)
+        navigate('/'); 
+       
             account_name = name
              account_email= email
-            
-          alert(`welcome ${name}`)
+             console.log(name)
+             console.log(email)
+             
+         
       } else if (response.data === "notexists") {
         alert("Your account doesn't exist");
       }

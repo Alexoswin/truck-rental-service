@@ -228,3 +228,81 @@ img{
 
   
 }
+#map {
+  height: 45vh;
+  width: 65vw;
+  position: relative;
+  border-radius: 3vh;
+  display: inline-block;
+  
+  
+  
+}
+
+.route{
+  
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+  height: 1.8rem;
+  width: 20rem;
+  position: relative;
+}
+#services{
+  font-size: 2rem;
+  display: inline-block;
+}
+
+
+#distance{
+  position: relative;
+ 
+}
+body{
+  background-color: rgb(228, 246, 248);
+}
+#inputs{
+  
+  position:absolute;
+  display: inline-block;
+  font-size: 1rem;
+   margin-left: 5vw;
+  right: 15vw;
+  border-radius: 4vh;
+  background-color: white;
+  
+  margin-top:15vh;
+  border-width: 1vh;
+  border-style:inset;
+  border-color: aqua;
+  
+  
+  
+}
+.address{
+ 
+ 
+  display: flex;
+  justify-content:center;
+  flex-direction: column;
+  margin-left: 10vw;
+  
+  
+}
+.form-control{
+  
+  width: 30vw;
+
+  font-size: 2vh;
+  height: 10vh;
+
+  
+}
+.size{
+  width:20vh
+}
+.input-group{
+  width:45vw;
+}
+.route{
+  height: 5vh;
+  font-size: 1rem;
+}
