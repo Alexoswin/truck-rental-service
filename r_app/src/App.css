@@ -257,10 +257,10 @@ img{
  
 }
 body{
-  background-color: rgb(228, 246, 248);
+  background-color: rgb(225, 225, 225);
 }
 #inputs{
-  
+  top:65vh;
   position:absolute;
   display: inline-block;
   font-size: 1rem;
@@ -305,4 +305,58 @@ body{
 .route{
   height: 5vh;
   font-size: 1rem;
+}
+.map_card_image{
+
+  height: 30vw;
+  width: 45vw;
+  
+  position: absolute;
+  top:10vh;
+  left: 2vw;
+  
+  border-radius: 4vh;
+  background-size: cover;
+  display: inline-block;
+  
+}
+
+.map_card_style{
+  height: 30vw;
+  width: 45vw;
+  border-radius: 4vh;
+}
+
+.div-text{
+  display: inline-block;
+  width: 70vh;
+  position: relative;
+  left: 50vw;
+  bottom: 25.3vw;
+  font-size: 1.3vw;
+  
+
+}
+#col{
+  background-color: rgb(231, 244, 255);
+  height: 200vh;
+
+}
+
+.cost_per_km{
+ 
+
+  background-color: greenyellow;
+  
+}
+#calculate{
+  height: 5vh;
+  width: 20vh;
+  background-color: aquamarine;
+}
+#totalDistance{
+  font-size: 1.2rem;
+}
+#totalCost{
+  font-size: 1.2rem;
 }
