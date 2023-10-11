@@ -1,6 +1,6 @@
 const express = require("express");
-const collection = require("./mongo");
-const collectionone = require("./mongo2"); // Import your MongoDB collection
+const login = require("./mongo");
+const orderdetails = require("./mongo2"); // Import your MongoDB collection
 const cors = require("cors");
 const app = express();
 
@@ -16,7 +16,7 @@ app.get("/", cors(), (req, res) => {
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
-    const check = await collection.findOne({ email, password });
+    const check = await login.findOne({ email, password });
 
     if (check) {
       res.json("exists");
@@ -37,12 +37,12 @@ app.post("/signup", async (req, res) => {
     password: spassword,
   };
   try {
-    const check = await collection.findOne({ email: semail });
+    const check = await login.findOne({ email: semail });
 
     if (check) {
       res.json("exists");
     } else {
-      await collection.insertMany([data]);
+      await login.insertMany([data]);
       res.json("notexists");
     }
   } catch (e) {
@@ -64,7 +64,7 @@ app.post("/bookings", async (req, res) => {
     id:id
   };
   try {
-    await collectionone.insertMany([details]);
+    await orderdetails.insertMany([details]);
     res.json("done");
   } catch (e) {
     res.json("server error");

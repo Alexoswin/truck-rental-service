@@ -32,7 +32,7 @@ class Opencard extends Component {
        
       });
       if (res.data === "done") {
-        alert("Booked successfully");
+        alert("Booked successfully services will be provided by tomorrow morning");
       } else if (res.data === "server error") {
         alert("Server error");
       }

@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 mongoose.connect('mongodb+srv://oswin:oswinalex@cluster0.7mnzpn3.mongodb.net/?retryWrites=true&w=majority&dbname=newtest')
 .then(()=>{
-    console.log("mongodb collection 2 connected")
+    console.log("mongodb collection order details connected")
 
 })
 .catch(()=>{
@@ -12,12 +12,12 @@ mongoose.connect('mongodb+srv://oswin:oswinalex@cluster0.7mnzpn3.mongodb.net/?re
 const newSchema= new mongoose.Schema({
    
     tcost:{
-        type:String,
+        type:Number,
         require:true
         
     },
     tdistance:{
-        type:String,
+        type:Number,
         require:true
         
     },
@@ -41,11 +41,11 @@ const newSchema= new mongoose.Schema({
         require:true
     },
     id:{
-        type:String,
+        type:Number,
         require:true
     }
 
     })
 
-    const collectionone = mongoose.model("collectionone", newSchema)
-    module.exports=collectionone
+    const orderdetails = mongoose.model("orderdetails", newSchema)
+    module.exports=orderdetails
