@@ -4,6 +4,7 @@ const orderdetails = require("./mongo2"); // Import your MongoDB collection
 const cors = require("cors");
 const app = express();
 
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
@@ -13,7 +14,7 @@ app.get("/", cors(), (req, res) => {
   res.json("Welcome to the server!");
 });
 
-app.post("/login", async (req, res) => {
+app.post("/login",  async (req, res) => {
   const { email, password } = req.body;
   try {
     const check = await login.findOne({ email, password });
@@ -30,6 +31,21 @@ app.post("/login", async (req, res) => {
 
 app.post("/signup", async (req, res) => {
   const { sname, semail, spassword } = req.body;
+
+  const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+  if (!emailRegex.test(semail)) {
+    return res.json("invalidemail");
+  }
+
+  if (!/^[a-zA-Z0-9\s]*$/.test(sname) || sname.trim().length === 0) {
+    return res.json("invalidname");
+  }
+  
+  
+  if (spassword.length < 5) {
+    return res.json("invalidpassword");
+  }
+  
 
   const data = {
     name: sname,
@@ -50,7 +66,7 @@ app.post("/signup", async (req, res) => {
   }
 });
 
-// Bookings route
+/// Bookings route
 app.post("/bookings", async (req, res) => {
   const { tcost, tdistance, source, destination, address ,date_booked,id} = req.body;
 

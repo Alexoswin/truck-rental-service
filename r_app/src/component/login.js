@@ -9,8 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Login(){
   const navigate = useNavigate();
-  let account_name = ""
-  let account_email= ""
+ 
   const [name,setName]=useState('')
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
@@ -29,8 +28,7 @@ export default function Login(){
         alert(`welcome ${name}`)
         navigate('/'); 
        
-            account_name = name
-             account_email= email
+            
              console.log(name)
              console.log(email)
              
@@ -61,7 +59,19 @@ export default function Login(){
       if (res.data === "exists") {
         alert("Your account already exists");
 
-      } else if (res.data === "notexists") {
+      } 
+      else if (res.data === "invalidname") {
+        alert("invalid name");
+      }
+      else if (res.data === "invalidpassword") {
+        alert("password must be minimum 5 characters");
+      }
+      else if (res.data === "invalidemail") {
+        alert(" enter a valid email id");
+      }
+      
+      
+      else if (res.data === "notexists") {
         alert("Account created successfully");
       }
     } catch (error) {
