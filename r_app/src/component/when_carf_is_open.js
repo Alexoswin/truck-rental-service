@@ -1,9 +1,44 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
+import axios from "axios";
 
 class Opencard extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      source: '',
+      destination: '',
+      tcost: 'N/A',
+      tdistance: 'N/A',
+      address: '',
+    };
+  }
+
+  async submit3(e) {
+    e.preventDefault();
+    try {
+      const res = await axios.post("http://localhost:8000/booking", {
+        tcost: this.state.tcost,
+        tdistance: this.state.tdistance,
+        destination: this.state.destination,
+        source: this.state.source,
+        address: this.state.address,
+      });
+      if (res.data === "booked") {
+        this.Openal(); // Call your success function
+      } else if (res.data === "notbooked") {
+        alert("Successfully booked");
+      }
+    } catch (error) {
+      alert("Error creating booking");
+      console.error(error);
+    }
+  }
+  
+
   componentDidMount() {
-    mapboxgl.accessToken = 'pk.eyJ1Ijoib3N3aW5hbGV4IiwiYSI6ImNsbmV1endyMjBsNDEycXRjNmt4M2I3a28ifQ.M0WoyDbplPY3KfJKN5HZVg'; // Replace with your Mapbox access token
+    mapboxgl.accessToken = 'pk.eyJ1Ijoib3N3aW5hbGV4IiwiYSI6ImNsbmV1endyMjBsNDEycXRjNmt4M2I3a28ifQ.M0WoyDbplPY3KfJKN5HZVg'
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
@@ -13,12 +48,8 @@ class Opencard extends Component {
 
     // Function to calculate the route
     const calculateRoute = () => {
-      const startLocation = encodeURIComponent(
-        document.getElementById('startLocation').value
-      );
-      const endLocation = encodeURIComponent(
-        document.getElementById('endLocation').value
-      );
+      const startLocation = encodeURIComponent(this.state.source);
+      const endLocation = encodeURIComponent(this.state.destination);
 
       // Use a geocoding service to convert place names to coordinates
       fetch(
@@ -37,25 +68,23 @@ class Opencard extends Component {
 
               // Now, use the coordinates to fetch the route
               fetch(
-                `https://api.mapbox.com/directions/v5/mapbox/driving/${startCoordinates.join(
-                  ','
-                )};${endCoordinates.join(',')}?access_token=${mapboxgl.accessToken}`
+                `https://api.mapbox.com/directions/v5/mapbox/driving/${startCoordinates.join(',')};${endCoordinates.join(',')}?access_token=${mapboxgl.accessToken}`
               )
                 .then((response) => response.json())
                 .then((data) => {
                   if (data.routes && data.routes.length > 0) {
                     const distance = (data.routes[0].distance / 1000).toFixed(2); // Convert meters to kilometers
 
-                    // Display the total distance
-                    document.getElementById('totalDistance').textContent = `Total Distance: ${distance} km`;
+                    // Set the state with total distance
+                    this.setState({ tdistance: distance });
 
                     // Calculate the total cost based on the cost per kilometer (from props)
                     const costPerKm = this.props.cost; // Assuming cost is passed as a prop
                     const totalCost = (distance * costPerKm).toFixed(2); // Calculate total cost
 
-                    // Display the total cost
-                    document.getElementById('totalCost').textContent = `Total Cost: ₹${totalCost}`;
-                    
+                    // Set the state with total cost
+                    this.setState({ tcost: totalCost });
+
                     // Update the map route
                     const route = data.routes[0].geometry;
                     if (!map.getSource('route')) {
@@ -75,41 +104,42 @@ class Opencard extends Component {
                   } else {
                     console.error('No route found.');
 
-                    // Display N/A for distance and cost
-                    document.getElementById('totalDistance').textContent = 'Total Distance: N/A';
-                    document.getElementById('totalCost').textContent = 'Total Cost: ₹N/A';
+                    // Set the state with N/A for distance and cost
+                    this.setState({ tdistance: 'N/A' });
+                    this.setState({ tcost: 'N/A' });
                   }
                 })
                 .catch((error) => {
                   console.error('Error fetching route data:', error);
 
-                  // Display N/A for distance and cost
-                  document.getElementById('totalDistance').textContent = 'Total Distance: N/A';
-                  document.getElementById('totalCost').textContent = 'Total Cost: ₹N/A';
+                  // Set the state with N/A for distance and cost
+                  this.setState({ tdistance: 'N/A' });
+                  this.setState({ tcost: 'N/A' });
                 });
             })
             .catch((error) => {
               console.error('Error fetching end location coordinates:', error);
 
-              // Display N/A for distance and cost
-              document.getElementById('totalDistance').textContent = 'Total Distance: N/A';
-              document.getElementById('totalCost').textContent = 'Total Cost: ₹N/A';
+              // Set the state with N/A for distance and cost
+              this.setState({ tdistance: 'N/A' });
+              this.setState({ tcost: 'N/A' });
             });
         })
         .catch((error) => {
           console.error('Error fetching start location coordinates:', error);
 
-          // Display N/A for distance and cost
-          document.getElementById('totalDistance').textContent = 'Total Distance: N/A';
-          document.getElementById('totalCost').textContent = 'Total Cost: ₹N/A';
+          // Set the state with N/A for distance and cost
+          this.setState({ tdistance: 'N/A' });
+          this.setState({ tcost: 'N/A' });
         });
     };
 
     // Attach the calculateRoute function to the button click event
     document.getElementById('calculateButton').addEventListener('click', calculateRoute);
   }
-  Openal=()=>{
-    alert('booked sucessfully')
+
+  Openal = () => {
+    alert('Booked successfully');
   }
 
   render() {
@@ -117,55 +147,58 @@ class Opencard extends Component {
 
     return (
       <>
-        <div id="col" className="aliceblue">
-          <div className="map_card_image">
-            <img className="map_card_style" alt="truck img" src={image} />
-            <div className="div-text">
-              <p className="paragraph">
-                {text}
-                <br />
-                <br />
-                <div className="cost_per_km">Cost per km = ₹{this.props.cost}</div>
-              </p>
-            </div>
+      <div id="col" className="aliceblue">
+        <div className="map_card_image">
+          <img className="map_card_style" alt="truck img" src={image} />
+          <div className="div-text">
+            <p className="paragraph">
+              {text}
+              <br />
+              <br />
+              <div className="cost_per_km">Cost per km = ₹{this.props.cost}</div>
+            </p>
           </div>
-          <div id="inputs">
-            <div id="map"></div>
+        </div>
+        <div id="inputs">
+          <div id="map"></div>
+          <br />
+          <div className="address">
+            <div id="services">Our services are all across Mumbai</div>
             <br />
-            <div className="address">
-              <div id="services">Our services are all across Mumbai</div>
-              <br />
-              <br />
-              <input
-                type="text"
-                className="route form-control"
-                id="startLocation"
-                placeholder="Enter start location"
-              />
-              <br />
-              <input
-                type="text"
-                aria-label="default input example"
-                className="route form-control"
-                id="endLocation"
-                placeholder="Enter end location"
-              />
-              <br />
-              <button className="size btn btn-success" id="calculateButton">
-                Calculate Route
-              </button>
-              <p id="totalDistance">Total Distance: N/A</p>
-              <p id="totalCost">Total Cost: ₹N/A</p>
-              <div className="input-group">
-                <textarea
-                  placeholder="Enter your address"
-                  className="form-control"
-                  aria-label="With textarea"
-                ></textarea>
-              </div>
-              <br />
-              <button type="button" onClick={this.Openal} className="size btn btn-success">
-                Book Now
+            <br />
+            <input
+              onChange={(e) => this.setState({ source: e.target.value })}
+              type="text"
+              className="route form-control"
+              id="startLocation"
+              placeholder="Enter start location"
+            />
+            <br />
+            <input
+              type="text"
+              onChange={(e) => this.setState({ destination: e.target.value })}
+              aria-label="default input example"
+              className="route form-control"
+              id="endLocation"
+              placeholder="Enter end location"
+            />
+            <br />
+            <button className="size btn btn-success" id="calculateButton">
+              Calculate Route
+            </button>
+            <p id="totalDistance">Total Distance: {this.state.tdistance}</p>
+            <p id="totalCost">Total Cost: ₹{this.state.tcost}</p>
+            <div className="input-group">
+              <textarea
+                onChange={(e) => this.setState({ address: e.target.value })}
+                placeholder="Enter your address"
+                className="form-control"
+                aria-label="With textarea"
+              ></textarea>
+            </div>
+            <br />
+            <button type="button" onClick={this.submit3} className="size btn btn-success">
+              Book
               </button>
             </div>
             <br />

@@ -16,13 +16,15 @@
 </head>
 <body>
     <div id="map"></div>
-    <div>
-        <label>Start Location:</label>
-        <input type="text" id="startLocation" placeholder="Enter start location">
-        <label>End Location:</label>
-        <input type="text" id="endLocation" placeholder="Enter end location">
-        <button onclick="calculateRoute()">Calculate Route</button>
-        <p>Total Distance: <span id="totalDistance">-</span> km</p>
+    <div class="inside">
+        <div class="input_tag">
+            <label>Start Location:</label>
+            <input type="text" id="startLocation" placeholder="Enter start location">
+            <label>End Location:</label>
+            <input type="text" id="endLocation" placeholder="Enter end location">
+            <button onclick="calculateRoute()">Calculate Route</button>
+            <p>Total Distance: <span id="totalDistance">-</span> km</p>
+        </div>
     </div>
     <script>
         mapboxgl.accessToken = 'pk.eyJ1Ijoib3N3aW5hbGV4IiwiYSI6ImNsbmV1endyMjBsNDEycXRjNmt4M2I3a28ifQ.M0WoyDbplPY3KfJKN5HZVg';
