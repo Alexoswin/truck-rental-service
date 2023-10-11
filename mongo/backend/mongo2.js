@@ -39,6 +39,10 @@ const newSchema= new mongoose.Schema({
     date_booked:{
         type:String,
         require:true
+    },
+    id:{
+        type:String,
+        require:true
     }
 
     })

@@ -256,7 +256,7 @@ img{
  
 }
 body{
-  background-color: rgb(206, 247, 255);
+  background-color: rgb(216, 248, 255);
 }
 #inputs{
   top:65vh;
@@ -355,13 +355,134 @@ body{
 }
 #totalDistance{
   font-size: 1.2rem;
+  color:rgb(0, 68, 255);
+  font-weight: 500;
 }
 #totalCost{
   font-size: 1.2rem;
+  color: rgb(0, 68, 255);
+  font-weight: 500;
 }
 #carouselExampleIndicators{
-  width: 100vw;
+  width: 99.1vw;
   z-index: 0;
  
   
+}
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 100%; /* Allow the container to expand to full width */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    overflow: hidden; /* Ensure the container doesn't overflow */
+}
+
+.container:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #efe9e9;
+}
+
+.developers {
+    display: flex;
+    justify-content: space-between; /* Distribute space between boxes */
+    flex-wrap: wrap;
+}
+
+.developer {
+    flex: 0 0 calc(30% - 20px); /* Distribute in 3 columns with some spacing */
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Apply the transition to all properties */
+    display: flex;
+    flex-direction: column; /* Display content in a column */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text horizontally */
+    border-radius: 10px; /* Add rounded corners */
+    margin-right: 20px;
+}
+
+.developer:last-child {
+    margin-right: 0; /* Remove margin from the last box */
+}
+
+/* Hover effect */
+.developer:hover {
+    background-color: #f5f5f5; /* Change background color on hover */
+    transform: translateY(-5px); /* Lift the box slightly on hover */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+}
+
+.developer img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%; /* Make the image round */
+    margin-bottom: 1vh; /* Add space below the image */
+}
+
+.developer h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.developer-details {
+    display: none;
+    padding-top: 10px;
+}
+
+/* Add styles for the "Show Details" button */
+.show-details-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.show-details-btn:hover {
+    background-color: #555;
+}
+
+/* Responsive CSS for mobile devices */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .developers {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .developer {
+        flex-basis: calc(50% - 20px); /* Display 2 boxes per row on smaller screens */
+        margin-right: 0; /* Remove margin from the last box */
+        margin-bottom: 20px; /* Add space below boxes */
+    }
+}
+
+.dev{
+  position:absolute;
+  top: 30vh;
+  height: 50vh;
 }
