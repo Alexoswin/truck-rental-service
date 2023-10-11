@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import mapboxgl from 'mapbox-gl';
-import axios from "axios";
 
 class Opencard extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -15,27 +14,30 @@ class Opencard extends Component {
     };
   }
 
-  async submit3(e) {
-    e.preventDefault();
+  async calculateRoute() {
+    // Your existing route calculation code here
+  }
+
+  async submitBooking() {
     try {
-      const res = await axios.post("http://localhost:8000/booking", {
+      const res = await axios.post("http://localhost:8000/bookings", {
         tcost: this.state.tcost,
         tdistance: this.state.tdistance,
         destination: this.state.destination,
         source: this.state.source,
         address: this.state.address,
       });
-      if (res.data === "booked") {
-        this.Openal(); // Call your success function
-      } else if (res.data === "notbooked") {
-        alert("Successfully booked");
+      if (res.data === "done") {
+        alert("Booked successfully");
+      } else if (res.data === "server error") {
+        alert("Server error");
       }
     } catch (error) {
       alert("Error creating booking");
       console.error(error);
     }
   }
-  
+
 
   componentDidMount() {
     mapboxgl.accessToken = 'pk.eyJ1Ijoib3N3aW5hbGV4IiwiYSI6ImNsbmV1endyMjBsNDEycXRjNmt4M2I3a28ifQ.M0WoyDbplPY3KfJKN5HZVg'
@@ -142,71 +144,79 @@ class Opencard extends Component {
     alert('Booked successfully');
   }
 
-  render() {
-    const { image, text } = this.props;
+ 
 
-    return (
-      <>
-      <div id="col" className="aliceblue">
-        <div className="map_card_image">
-          <img className="map_card_style" alt="truck img" src={image} />
-          <div className="div-text">
-            <p className="paragraph">
-              {text}
-              <br />
-              <br />
-              <div className="cost_per_km">Cost per km = ₹{this.props.cost}</div>
-            </p>
-          </div>
-        </div>
-        <div id="inputs">
-          <div id="map"></div>
-          <br />
-          <div className="address">
-            <div id="services">Our services are all across Mumbai</div>
-            <br />
-            <br />
-            <input
-              onChange={(e) => this.setState({ source: e.target.value })}
-              type="text"
-              className="route form-control"
-              id="startLocation"
-              placeholder="Enter start location"
-            />
-            <br />
-            <input
-              type="text"
-              onChange={(e) => this.setState({ destination: e.target.value })}
-              aria-label="default input example"
-              className="route form-control"
-              id="endLocation"
-              placeholder="Enter end location"
-            />
-            <br />
-            <button className="size btn btn-success" id="calculateButton">
-              Calculate Route
-            </button>
-            <p id="totalDistance">Total Distance: {this.state.tdistance}</p>
-            <p id="totalCost">Total Cost: ₹{this.state.tcost}</p>
-            <div className="input-group">
-              <textarea
-                onChange={(e) => this.setState({ address: e.target.value })}
-                placeholder="Enter your address"
-                className="form-control"
-                aria-label="With textarea"
-              ></textarea>
+    render() {
+      const { image, text } = this.props;
+  
+      return (
+        <div className="aliceblue">
+          <div className="map_card_image">
+            <img className="map_card_style" alt="truck img" src={image} />
+            <div className="div-text">
+              <p className="paragraph">
+                {text}
+                <br />
+                <br />
+                <div className="cost_per_km">Cost per km = ₹{this.props.cost}</div>
+              </p>
             </div>
+          </div>
+          <div id="inputs">
+            <div id="map"></div>
             <br />
-            <button type="button" onClick={this.submit3} className="size btn btn-success">
-              Book
+            <div className="address">
+              <div id="services">Our services are all across Mumbai</div>
+              <br />
+              <br />
+              <input
+                onChange={(e) => this.setState({ source: e.target.value })}
+                type="text"
+                className="route form-control"
+                id="startLocation"
+                placeholder="Enter start location"
+              />
+              <br />
+              <input
+                type="text"
+                onChange={(e) => this.setState({ destination: e.target.value })}
+                aria-label="default input example"
+                className="route form-control"
+                id="endLocation"
+                placeholder="Enter end location"
+              />
+              <br />
+              <button
+                className="size btn btn-success"
+                id="calculateButton"
+                onClick={() => this.calculateRoute()}
+              >
+                Calculate Route
+              </button>
+              <p id="totalDistance">Total Distance: {this.state.tdistance}</p>
+              <p id="totalCost">Total Cost: ₹{this.state.tcost}</p>
+              <div className="input-group">
+                <textarea
+                  onChange={(e) => this.setState({ address: e.target.value })}
+                  placeholder="Enter your address"
+                  className="form-control"
+                  aria-label="With textarea"
+                ></textarea>
+              </div>
+              <br />
+              <button
+                type="button"
+                onClick={() => this.submitBooking()}
+                className="size btn btn-success"
+              >
+                Book
               </button>
             </div>
             <br />
           </div>
         </div>
-      </>
-    );
+      );
+    }
   }
-}
-
-export default Opencard;
+  
+  export default Opencard;

@@ -3,10 +3,10 @@ import Card from './card';
 import { Link } from 'react-router-dom';
 
 
-import image1 from "./images/t1.jpeg"
-import image2 from "./images/t2.jpeg"
+import image1 from "./images/for_card/crop1.jpg"
+import image2 from "./images/t4.jpeg"
 import image3 from "./images/t3.jpeg"
-import image4 from "./images/t4.jpeg"
+import image4 from "./images/for_card/crop3.jpg"
 
 
 // importing images for card 
@@ -21,8 +21,6 @@ import c7 from "./images/for_card/c6.jpeg"
 
 
   function Index() {
-
- 
 
   return (
     <>
@@ -63,9 +61,7 @@ import c7 from "./images/for_card/c6.jpeg"
 
       </div>
     </div> 
-    <Link to="/login">
-    <button className='btn btn-primarry' id="loginbtn">Login</button>
-    </Link>           
+             
       <div id="under_image_text">
 
       <p id="text">

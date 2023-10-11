@@ -15,8 +15,10 @@ export default function Navbar() { // Changed "navbar" to "Navbar"
         <NavLink className="nav" to="/">Home</NavLink>
         <NavLink className="nav" to="/Tracking">Live tracking</NavLink>
         <NavLink className="nav" to="/Account">Your account</NavLink>
-        <NavLink className="nav" to="/Bookings">Your bookings</NavLink>
+        
+        <NavLink className="nav"   to="/login">Login</NavLink>
         <NavLink className="nav" to="/about">About us</NavLink>
+       
       </div>
     </>
   );
