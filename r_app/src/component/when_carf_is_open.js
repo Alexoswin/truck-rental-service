@@ -197,7 +197,7 @@ class Opencard extends Component {
               >
                 Calculate Route
               </button>
-              <p id="totalDistance">Total Distance: {this.state.tdistance}</p>
+              <p id="totalDistance">Total Distance: {this.state.tdistance} km</p>
               <p id="totalCost">Total Cost: ₹{this.state.tcost}</p>
               <div className="input-group">
                 <textarea

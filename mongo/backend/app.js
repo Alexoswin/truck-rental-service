@@ -30,7 +30,7 @@ app.post("/login",  async (req, res) => {
 });
 
 app.post("/signup", async (req, res) => {
-  const { sname, semail, spassword } = req.body;
+  const { sname, semail, spassword ,date} = req.body;
 
   const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
   if (!emailRegex.test(semail)) {
@@ -51,6 +51,7 @@ app.post("/signup", async (req, res) => {
     name: sname,
     email: semail,
     password: spassword,
+    data: new Date()
   };
   try {
     const check = await login.findOne({ email: semail });

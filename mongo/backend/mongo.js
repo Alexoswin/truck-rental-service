@@ -28,6 +28,11 @@ const newSchema= new mongoose.Schema({
         type:String,
         require:true
         
+    },
+    date:{
+        type:String,
+        require:true
+        
     }
     })
 
