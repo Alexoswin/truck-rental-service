@@ -8,7 +8,7 @@ import {
   Routes,
  } from 'react-router-dom';
 import Index from './component/index';
-import Bookings from './component/Bookings';
+
 import Tracking from './component/tracking';
 import Account from './component/account';
 import Opencard from './component/when_carf_is_open';
@@ -23,6 +23,11 @@ import i4 from "./component/images/for_card/c3.jpeg"
 import i5 from "./component/images/for_card/c4.jpeg"
 import i6 from "./component/images/for_card/c5.jpeg"
 import i7 from "./component/images/for_card/c6.jpeg"
+import i8 from "./component/images/for_card/81.jpg"
+import i9 from "./component/images/for_card/82.jpg"
+import i10 from "./component/images/for_card/83.jpg"
+import i11 from "./component/images/for_card/84.jpg"
+import i12 from "./component/images/for_card/85.jpg"
 import Login from './component/login';
 
 
@@ -39,7 +44,7 @@ function App() {
 
         <Routes>
           <Route exact path="/" Component={Index}/>
-          <Route path='/Bookings' Component={Bookings} />
+         
           <Route path="/Developers" Component={About}/>
           <Route path="/Tracking" Component={Tracking} />
           <Route path="/Account" Component={Account}/>
@@ -58,6 +63,21 @@ function App() {
           <Route path ="/Details/truck7" element={<Opencard image={i7}
            id={7} cost="100" text="Cost per Kilometer: $0.65 Capacity: 15 tons Description: Truck 5 is a heavy-duty hauler with a cost per kilometer of $0.65. It excels in transporting large loads, accommodating up to 15 tons of freight Experience the perfect blend of power and reliability with our range of trucks, designed to conquer any road or job. These robust vehicles offer exceptional performance, cutting-edge technology, and unmatched durability, making them the ideal choice for both work and play. Whether you're hauling heavy loads or embarking on an adventure, our trucks are your trusted companions on the road ahead" />} />
           <Route path ="/login" Component={Login} />  
+          <Route path ="/Details/truck8" element={<Opencard image={i8}
+           id={8} cost="150" text="Cost per Kilometer: $0.65 Capacity: 15 tons Description: Truck 5 is a heavy-duty hauler with a cost per kilometer of $0.65. It excels in transporting large loads, accommodating up to 15 tons of freight Experience the perfect blend of power and reliability with our range of trucks, designed to conquer any road or job. These robust vehicles offer exceptional performance, cutting-edge technology, and unmatched durability, making them the ideal choice for both work and play. Whether you're hauling heavy loads or embarking on an adventure, our trucks are your trusted companions on the road ahead" />} />
+           
+          <Route path ="/Details/truck9" element={<Opencard image={i9}
+           id={9} cost="190" text="Cost per Kilometer: $0.65 Capacity: 15 tons Description: Truck 5 is a heavy-duty hauler with a cost per kilometer of $0.65. It excels in transporting large loads, accommodating up to 15 tons of freight Experience the perfect blend of power and reliability with our range of trucks, designed to conquer any road or job. These robust vehicles offer exceptional performance, cutting-edge technology, and unmatched durability, making them the ideal choice for both work and play. Whether you're hauling heavy loads or embarking on an adventure, our trucks are your trusted companions on the road ahead" />} />
+         
+          <Route path ="/Details/truck10" element={<Opencard image={i10}
+           id={10} cost="244" text="Cost per Kilometer: $0.65 Capacity: 15 tons Description: Truck 5 is a heavy-duty hauler with a cost per kilometer of $0.65. It excels in transporting large loads, accommodating up to 15 tons of freight Experience the perfect blend of power and reliability with our range of trucks, designed to conquer any road or job. These robust vehicles offer exceptional performance, cutting-edge technology, and unmatched durability, making them the ideal choice for both work and play. Whether you're hauling heavy loads or embarking on an adventure, our trucks are your trusted companions on the road ahead" />} />
+
+          <Route path ="/Details/truck11" element={<Opencard image={i11}
+           id={11} cost="300" text="Cost per Kilometer: $0.65 Capacity: 15 tons Description: Truck 5 is a heavy-duty hauler with a cost per kilometer of $0.65. It excels in transporting large loads, accommodating up to 15 tons of freight Experience the perfect blend of power and reliability with our range of trucks, designed to conquer any road or job. These robust vehicles offer exceptional performance, cutting-edge technology, and unmatched durability, making them the ideal choice for both work and play. Whether you're hauling heavy loads or embarking on an adventure, our trucks are your trusted companions on the road ahead" />} />
+       
+          <Route path ="/Details/truck12" element={<Opencard image={i12}
+           id={12} cost="400" text="Cost per Kilometer: $0.65 Capacity: 15 tons Description: Truck 5 is a heavy-duty hauler with a cost per kilometer of $0.65. It excels in transporting large loads, accommodating up to 15 tons of freight Experience the perfect blend of power and reliability with our range of trucks, designed to conquer any road or job. These robust vehicles offer exceptional performance, cutting-edge technology, and unmatched durability, making them the ideal choice for both work and play. Whether you're hauling heavy loads or embarking on an adventure, our trucks are your trusted companions on the road ahead" />} />
+       
 
         </Routes>
       </Router>

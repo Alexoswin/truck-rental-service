@@ -44,6 +44,8 @@
   },
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
+    "eslint": "^8.52.0",
+    "eslint-config-react-app": "^7.0.1",
     "source-map-loader": "^4.0.1"
   }
 }

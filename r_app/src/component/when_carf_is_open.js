@@ -41,6 +41,9 @@ class Opencard extends Component {
       } else if (res.data === "server error") {
         alert("Server error");
       }
+      else if (res.data==="notl"){
+        alert("plese Login before booking")
+      }
     } catch (error) {
       alert("Error creating booking");
       console.error(error);

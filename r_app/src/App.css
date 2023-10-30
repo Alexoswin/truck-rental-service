@@ -515,3 +515,14 @@ h1 {
   margin-top: 2vh;
   margin-left: 8vh;
 }
+.map_card_image{
+  box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.464);
+  
+
+}
+#cardimage1{
+  transition: transform 0.3s
+}
+#cardimage1:hover{
+  transform: scale(1.1)
+}

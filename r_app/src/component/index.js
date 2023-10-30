@@ -17,8 +17,11 @@ import c4 from "./images/for_card/c3.jpeg"
 import c5 from "./images/for_card/c4.jpeg"
 import c6 from "./images/for_card/c5.jpeg"
 import c7 from "./images/for_card/c6.jpeg"
-
-
+import c8 from "./images/for_card/81.jpg"
+import c9 from "./images/for_card/82.jpg"
+import c10 from "./images/for_card/83.jpg"
+import c11 from "./images/for_card/84.jpg"
+import c12 from "./images/for_card/85.jpg"
 
   function Index() {
 
@@ -106,6 +109,26 @@ import c7 from "./images/for_card/c6.jpeg"
         <Link to="/Details/truck7">
           <Card text="Cost per Kilometer: $0.65 Capacity: 15 tons Description: Truck 5 is a heavy-duty hauler with a cost per kilometer of $0.65. It excels in transporting large loads, accommodating up to 15 tons of freight"  url={c7}/>
         </Link>
+        <Link to="/Details/truck8">
+          <Card text="Cost per Kilometer: $0.65 Capacity: 15 tons Description: Truck 5 is a heavy-duty hauler with a cost per kilometer of $0.65. It excels in transporting large loads, accommodating up to 15 tons of freight"  url={c8}/>
+        </Link>
+        <Link to="/Details/truck9">
+          <Card text="Cost per Kilometer: $0.65 Capacity: 15 tons Description: Truck 5 is a heavy-duty hauler with a cost per kilometer of $0.65. It excels in transporting large loads, accommodating up to 15 tons of freight"  url={c9}/>
+        </Link>
+        <Link to="/Details/truck10">
+          <Card text="Cost per Kilometer: $0.65 Capacity: 15 tons Description: Truck 5 is a heavy-duty hauler with a cost per kilometer of $0.65. It excels in transporting large loads, accommodating up to 15 tons of freight"  url={c10}/>
+        </Link>
+        <Link to="/Details/truck11">
+          <Card text="Cost per Kilometer: $0.65 Capacity: 15 tons Description: Truck 5 is a heavy-duty hauler with a cost per kilometer of $0.65. It excels in transporting large loads, accommodating up to 15 tons of freight"  url={c11}/>
+        </Link>
+        <Link to="/Details/truck12">
+          <Card text="Cost per Kilometer: $0.65 Capacity: 15 tons Description: Truck 5 is a heavy-duty hauler with a cost per kilometer of $0.65. It excels in transporting large loads, accommodating up to 15 tons of freight"  url={c12}/>
+        </Link>
+      
+      
+      
+      
+      
       
         
 

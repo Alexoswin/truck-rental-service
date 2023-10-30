@@ -70,8 +70,13 @@ app.post("/signup", async (req, res) => {
 /// Bookings route
 app.post("/bookings", async (req, res) => {
   const {emailb, tcost, tdistance, source, destination, address ,date_booked,id} = req.body;
-
+   
+  if (emailb =="null") {
+    return res.json("notl");
+  }
+  
   const details = {
+
     tcost: tcost,
     tdistance: tdistance,
     source: source,
@@ -84,6 +89,7 @@ app.post("/bookings", async (req, res) => {
   try {
     await orderdetails.insertMany([details]);
     res.json("done");
+
   } catch (e) {
     res.json("server error");
   }
