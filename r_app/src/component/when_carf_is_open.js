@@ -12,6 +12,8 @@ class Opencard extends Component {
       tdistance: 'N/A',
       address: '',
       id: this.props.id,
+      emailb: this.props.email|| localStorage.getItem("email")
+      
       
     };
   }
@@ -19,7 +21,7 @@ class Opencard extends Component {
   async calculateRoute() {
     // Your existing route calculation code here
   }
-
+ 
   async submitBooking() {
     try {
       const res = await axios.post("http://localhost:8000/bookings", {
@@ -28,7 +30,10 @@ class Opencard extends Component {
         destination: this.state.destination,
         source: this.state.source,
         address: this.state.address,
-        id:this.state.id
+        id:this.state.id,
+        emailb: this.state.emailb,
+       
+        
        
       });
       if (res.data === "done") {

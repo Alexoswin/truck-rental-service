@@ -1,8 +1,10 @@
-import React from 'react';
+
+
 import { NavLink } from 'react-router-dom';
 
 
 export default function Navbar() { // Changed "navbar" to "Navbar"
+
  
   
   return (
@@ -13,10 +15,10 @@ export default function Navbar() { // Changed "navbar" to "Navbar"
         </svg>
 
         <NavLink className="nav" to="/">Home</NavLink>
-        <NavLink className="nav" to="/Tracking">Live tracking</NavLink>
-        <NavLink className="nav" to="/Account">Your account</NavLink>
-        
-        <NavLink className="nav"   to="/login">Login</NavLink>
+        <NavLink className="nav" to="/for_Dealer">For dealer</NavLink>
+        <NavLink  className="nav" to="/Login">Login</NavLink>
+        <NavLink  className="nav" to="/Account">Account</NavLink>
+       
         <NavLink className="nav" to="/Developers">Developers</NavLink>
        
       </div>

@@ -4,7 +4,7 @@ import  "./login.css"
 import React ,{useState} from "react";
 import { useNavigate } from 'react-router-dom';
 
-
+localStorage.setItem("login" , "Login")  
 
 
 export default function Login(){
@@ -27,11 +27,10 @@ export default function Login(){
       if (response.data === "exists") {
         alert(`welcome ${name}`)
         navigate('/'); 
-       
-            
-             console.log(name)
-             console.log(email)
-             
+        localStorage.setItem('name',JSON.stringify(name))
+        localStorage.setItem('email',JSON.stringify(email))
+        localStorage.setItem("login" , "Account")        
+              
          
       } else if (response.data === "notexists") {
         alert("Your account doesn't exist");

@@ -69,7 +69,7 @@ app.post("/signup", async (req, res) => {
 
 /// Bookings route
 app.post("/bookings", async (req, res) => {
-  const { tcost, tdistance, source, destination, address ,date_booked,id} = req.body;
+  const {emailb, tcost, tdistance, source, destination, address ,date_booked,id} = req.body;
 
   const details = {
     tcost: tcost,
@@ -78,7 +78,8 @@ app.post("/bookings", async (req, res) => {
     destination: destination,
     address: address,
     date_booked: new Date(),
-    id:id
+    id:id,
+    emailb:emailb
   };
   try {
     await orderdetails.insertMany([details]);

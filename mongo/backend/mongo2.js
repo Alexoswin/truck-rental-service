@@ -44,6 +44,10 @@ const newSchema= new mongoose.Schema({
     id:{
         type:Number,
         require:true
+    },
+    emailb:{
+        type:String,
+        require:true
     }
 
     })

@@ -99,11 +99,11 @@ body{
   font-size: 1.5rem;
   margin-left: 1vw;
 
-  border-collapse: collapses;
+
   position: relative;
  overflow: hidden;
  color: rgb(0, 0, 0);
-  
+ box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.439);
   top: 1vh;
 }
 
@@ -485,4 +485,33 @@ h1 {
   position:absolute;
   top: 30vh;
   height: 50vh;
+  
+}
+.Id{
+
+ margin-left: 8vh;
+ font-size: 3vh;
+ display: inline-block;
+
+ margin-top: 2vh;
+ border-radius:1vh;
+ padding-left: 1vh;
+
+  box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
+
+}
+#abox{
+  box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.445);
+ 
+}
+.userimg{
+  box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.39);
+  border-width: 1vh;
+  border-style:solid;
+  border-color: rgb(75, 255, 65);
+}
+#lbtn{
+  font-size: 1.8vh;
+  margin-top: 2vh;
+  margin-left: 8vh;
 }
