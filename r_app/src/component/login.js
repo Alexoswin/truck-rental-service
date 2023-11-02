@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 localStorage.setItem("login" , "Login")  
 localStorage.setItem("email", "null")
+localStorage.setItem("name", "null")
 
 export default function Login(){
   const navigate = useNavigate();
@@ -71,7 +72,13 @@ export default function Login(){
       
       
       else if (res.data === "notexists") {
-        alert("Account created successfully");
+        alert(`Account created successfully welcome ${sname}`);
+      
+        navigate('/'); 
+        localStorage.setItem('name',JSON.stringify(sname))
+        localStorage.setItem('email',JSON.stringify(semail))
+        localStorage.setItem("login" , "Account")        
+              
       }
     } catch (error) {
       alert("Error creating account");
